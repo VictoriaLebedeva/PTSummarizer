@@ -2,22 +2,31 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PTSummarizer</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/web/static/style.css" />
+    <link rel="stylesheet" href="/src/web/static/fonts.css" />
+    <title>PTSummarizer</title>
 </head>
 
 <body>
-  <h1>PTSummarizer</h1>
-  <form action="" method="post">
-    {{form.url}}
-    {{form.submit}}
-
-    {% if data %}
-      <p>{{data}}</p>
-    {% endif %}
-  </form>
+<div class="title">
+    <h1>article summarizer</h1>
+    <p>choose the important</p>
+</div>
+<div class="form">
+    <form action="" method="post">
+        <label for="POST-url">url</label>
+        <input id="POST-url" type="text" name="url">
+        <a href=""><div class="btn-go">go</div></a>
+    </form>
+</div>
+<div class="circle-first"></div>
+<div class="circle-second"></div>
+<div class="circle-third"></div>
+<div class="circle-fourth"></div>
+<div class="circle-fifth"></div>
 </body>
 
 </html>
