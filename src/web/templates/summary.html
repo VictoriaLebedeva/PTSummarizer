@@ -1,16 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Summary</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary</title>
+    <link rel="stylesheet" href="/src/web/static/style.css" />
+    <link rel="stylesheet" href="/src/web/static/fonts.css" />
 </head>
-<body>
-  <h1>article summarizer</h1>
-  <h2>{{title}}</h2>
-  {% for paragraph in text %}
-    <p>{{paragraph}}</p>
-  {% endfor %}
+<body class="body-summary">
+<div class="wrapper">
+    <div class="summary-title">
+        <h1>article summarizer</h1>
+        <h2>One year in, parenting has taught us about vulnerability and gratitude</h2>
+    </div>
+    <div class="original">
+        <textarea type="text" disabled>
+fkewjewkfvjewnvmewkmvfflwelnfvoiqwkvmernjbjberikvowemvkewmvokwemviocjweivmewmviomewkmvioewmviomewvioewvioewmvmewoivm
+        </textarea>
+    </div>
+        <div class="summary">
+        <textarea type="text" disabled>
+ejvcnjwvjiewviewjiovoewvioewmvmwelkfpolweplowekofkwemfl,ewkfcopewmofk,we;lfmc;welpofckfewomvioewmlw,ekcpoewkioew
+        </textarea>
+    </div>
+</div>
 </body>
 </html>
