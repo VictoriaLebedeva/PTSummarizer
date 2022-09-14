@@ -1,8 +1,10 @@
-from parse_article import parse_article
+from parser.parse_article import parse_article
 from flask import Flask, render_template, request
-from form import ArticleURLSubmit
+from web.form import ArticleURLSubmit
 
-app = Flask(__name__)
+app = Flask(__name__, 
+           template_folder='web/templates', 
+           static_folder='web/static')
 # app.debug = True
 app.config['SECRET_KEY'] = 'QWERTYUIOP!@#$%^&*('
 
