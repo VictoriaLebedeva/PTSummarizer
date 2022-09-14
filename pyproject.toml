@@ -12,7 +12,6 @@ Flask-WTF = "^1.0.1"
 [tool.poetry.dev-dependencies]
 flake8 = "^5.0.4"
 black = "^22.8.0"
-
 mypy = "^0.971"
 
 [build-system]
