@@ -1,4 +1,3 @@
-import pandas as pd 
 import numpy as np
 import nltk
 nltk.download('punkt')
@@ -8,12 +7,12 @@ from sklearn.metrics.pairwise import cosine_similarity
 from nltk.tokenize import sent_tokenize
 
 def preprocess_data(paragraphs):
-  text_join = ''.join(paragraphs)
+  text_join = ' '.join(paragraphs)
   tokens = sent_tokenize(text_join)
 
   vectorizer = TfidfVectorizer()
   text_tfidf = vectorizer.fit_transform(tokens)
-  return text_tfidf
+  return text_tfidf, tokens
 
 def text_rank(text2vec, tokens):
 
@@ -40,4 +39,7 @@ def text_rank(text2vec, tokens):
 
   scores = limiting_dist
   sort_idx = np.argsort(-scores)
-  return [tokens[i] for i in sort_idx[:20]]
+  idx_threshold = round(len(tokens) * 0.5)
+
+  summary_idx = list(sorted(sort_idx[:idx_threshold]))
+  return [tokens[i] for i in summary_idx]
