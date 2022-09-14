@@ -23,7 +23,9 @@ def home_page():
 
     return render_template('home_page.html', form=form)
 
+def main():
+  app.run()
   
 if __name__ == '__main__':
-    app.run()
+    main()
     
