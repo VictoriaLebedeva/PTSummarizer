@@ -6,8 +6,17 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from nltk.tokenize import sent_tokenize
 
-def text_rank(paragraphs):
+def text_rank(paragraphs: list) -> list:
+  """
+  Applies Text Rank algorithm to paragraph
+  and returns the most relevant sentencies.
 
+  Args:
+    paragraphs (list): list of the paragraphs
+
+  Returns:
+    summary: list with the most relevant sentencies
+  """
   text_join = ' '.join(paragraphs)
   tokens = sent_tokenize(text_join)
 
@@ -15,7 +24,7 @@ def text_rank(paragraphs):
   text_tfidf = vectorizer.fit_transform(tokens)
 
   # calculate coisine similarity
-  similarity_matrix = cosine_similarity(text2vec)
+  similarity_matrix = cosine_similarity(text_tfidf)
   for i in range(len(similarity_matrix)):
     similarity_matrix[i] = similarity_matrix[i] / np.sum(similarity_matrix[i])  # transforn into matrix G
     
@@ -40,4 +49,5 @@ def text_rank(paragraphs):
   idx_threshold = round(len(tokens) * 0.5)
 
   summary_idx = list(sorted(sort_idx[:idx_threshold]))
-  return [tokens[i] for i in summary_idx]
+  summary = [tokens[i] for i in summary_idx]
+  return summary

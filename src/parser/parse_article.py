@@ -1,8 +1,8 @@
+from typing import Union
 import requests
-import re
 from bs4 import BeautifulSoup
 
-def parse_article(url: str) -> dict:
+def parse_article(url: str) -> Union([str, list]):
     """Gets paragraphs and title from the article.
     
     Args:
