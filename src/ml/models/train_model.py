@@ -6,15 +6,13 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from nltk.tokenize import sent_tokenize
 
-def preprocess_data(paragraphs):
+def text_rank(paragraphs):
+
   text_join = ' '.join(paragraphs)
   tokens = sent_tokenize(text_join)
 
   vectorizer = TfidfVectorizer()
   text_tfidf = vectorizer.fit_transform(tokens)
-  return text_tfidf, tokens
-
-def text_rank(text2vec, tokens):
 
   # calculate coisine similarity
   similarity_matrix = cosine_similarity(text2vec)
