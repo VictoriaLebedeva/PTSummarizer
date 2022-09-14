@@ -22,7 +22,6 @@ def parse_article(url: str) -> dict:
         
     return title, paragraphs
 
-
 if __name__ == '__main__':
     url = 'https://medium.com/history-of-yesterday/six-unexplainable-ancient-artifacts-7f909a0a2c7'
-    parse_article(url)
+    print(parse_article(url))
