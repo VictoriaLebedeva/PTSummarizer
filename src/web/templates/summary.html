@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,22 +9,29 @@
     <link rel="stylesheet" href="static/style.css" />
     <link rel="stylesheet" href="static/fonts.css" />
 </head>
+
 <body class="body-summary">
-<div class="wrapper">
-    <div class="summary-title">
-        <h1>article summarizer</h1>
-        <h2>{{title}}</h2>
-    </div>
-    <div class="original">
-        <textarea type="text" disabled>
-fkewjewkfvjewnvmewkmvfflwelnfvoiqwkvmernjbjberikvowemvkewmvokwemviocjweivmewmviomewkmvioewmviomewvioewvioewmvmewoivm
+    <div class="wrapper">
+        <div class="summary-title">
+            <h1>article summarizer</h1>
+            <h2>{{title}}</h2>
+        </div>
+        <div class="original">
+            <p>original</p>
+            <textarea type="text" disabled>
+                {% for item in original %}
+                    {{item}}
+                {% endfor %}
         </textarea>
-    </div>
+        </div>
         <div class="summary">
-        <textarea type="text" disabled>
-ejvcnjwvjiewviewjiovoewvioewmvmwelkfpolweplowekofkwemfl,ewkfcopewmofk,we;lfmc;welpofckfewomvioewmlw,ekcpoewkioew
+            <p>summary</p>
+            <textarea type="text" disabled>
+                {% for item in original %}
+                    {{item}}
+                {% endfor %}
         </textarea>
+        </div>
     </div>
-</div>
 </body>
 </html>

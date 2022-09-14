@@ -1,4 +1,5 @@
 import requests
+import re
 from bs4 import BeautifulSoup
 
 def parse_article(url: str) -> dict:
@@ -18,7 +19,8 @@ def parse_article(url: str) -> dict:
     paragraphs_html = soup.find_all('p', class_='pw-post-body-paragraph')
 
     for p in paragraphs_html:
-        paragraphs.append(p.text)
+        paragraph = p.text.strip('\t')
+        paragraphs.append(paragraph)
         
     return title, paragraphs
 

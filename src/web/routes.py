@@ -12,8 +12,8 @@ def home_page():
     if request.method == 'POST':
       url = request.form.get('url')  
 
-      title, text = parse_article(url)
-      return render_template('summary.html', title = title, text=text)
+      title, original = parse_article(url)
+      return render_template('summary.html', title=title, original=original, summary=original)
 
     return render_template('home_page.html', form=form)
 
